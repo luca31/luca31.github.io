@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titolo</title>
+  </head>
+  <body>
+    <h2>Calcola i divisori di un numero</h2>
+    <p id="risultato"></p>
+    <button onclick="calcola()">Calcola divisori</button>
+    <script>
+      let calcola = () => {
+        n = prompt("Inserisci un numero");
+
+        result = [];
+        for(let x=0; x<=n; x++) {
+          if(n%x==0){
+            result.push(x);
+          }
+        }
+
+        stringa = "I divisori di "+n+" sono: "
+        for(let x in result) {
+          stringa += result[x] + (x!=result.length-1 ? ", " : "")
+        }
+
+        document.getElementById("risultato").innerHTML = stringa;
+      }
+    </script>
+  </body>
+</html> 
